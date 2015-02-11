@@ -28,6 +28,7 @@ app.service('dataService', function() {
 
   	if(dataOkay) {
   		quotes.push(inputData);
+  		console.log(quotes);
   	} else {
   		console.log('There is an error with the input data.')
   	}
