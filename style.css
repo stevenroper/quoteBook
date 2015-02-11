@@ -1,0 +1,8 @@
+#remove-quote {
+	float: right;
+	display: inline-block;
+}
+
+#remove-quote a:link, #remove-quote a:visited {
+	text-decoration: none;
+}
