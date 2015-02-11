@@ -29,12 +29,16 @@ app.service('dataService', function() {
   	if(dataOkay) {
   		quotes.push(inputData);
   	} else {
-  		console.log('There is an error with the data.')
+  		console.log('There is an error with the input data.')
   	}
   };
 
-  this.removeData = function() {
-
+  this.removeData = function(inputQuote) {
+  	for (var i = 0; i < quotes.length; i++) {
+  		if (inputQuote === quotes[i].text) {
+  			quotes.splice(i, 1);
+  		}
+  	}
   };
 
 });
