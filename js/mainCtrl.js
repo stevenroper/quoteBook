@@ -10,8 +10,8 @@ app.controller('MainCtrl', function($scope, dataService) {
 		dataService.addData($scope.newQuote);
 	};
 
-	$scope.removeQuote = function() {
-
+	$scope.removeQuote = function(index) {
+		dataService.removeData(index);
 	};
 
 	$scope.filterQuote = function() {

@@ -7,8 +7,10 @@
 <body ng-controller='MainCtrl'>
 
 	<div ng-repeat='quote in quotes'>
-		{{quote.text}}
+		{{quote.text}} [<a href ng-click='removeQuote($index)'>X</a>]
 	</div>
+
+
 	<button ng-click='toggleAddFields = !toggleAddFields'>Add Quote</button>
 		<input ng-show='toggleAddFields' placeholder='New Quote' ng-model='newQuote.text'>
 		<input ng-show='toggleAddFields' placeholder="Author's Name" ng-model='newQuote.author'>
