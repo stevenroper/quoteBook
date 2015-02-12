@@ -8,6 +8,8 @@ app.controller('MainCtrl', function($scope, dataService) {
 
 	$scope.addQuote = function() {
 		dataService.addData($scope.newQuote);
+		$scope.newQuote = {};
+		$scope.toggleAddFields = false;
 	};
 
 	$scope.removeQuote = function(index) {
