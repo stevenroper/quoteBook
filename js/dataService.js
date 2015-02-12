@@ -1,7 +1,7 @@
 var app = angular.module('quoteBook');
 
-app.service('dataService', function() {
-	var quotes = [
+app.service('dataService', function($cookies, $cookieStore) {
+	var dummyQuotes = [
     { text: 'Life isn\'t about getting and having, it\'s about giving and being.', author: 'Kevin Kruse'},
     { text: 'Whatever the mind of man can conceive and believe, it can achieve', author: 'Napoleon Hill'},
     { text: 'Strive not to be a success, but rather to be of value.', author: 'Albert Einstein'},
@@ -10,8 +10,19 @@ app.service('dataService', function() {
     { text: 'Life is what happens to you while you\'re busy making other plans.', author: 'John Lennon'},
     { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
   ];
+  
+  var storeArrayInCookies = function() {
+  		if($cookieStore.get('quotesArray').length < 1) {
+  			$cookieStore.put('quotesArray', dummyQuotes);
+  		}
+  }();
+
+  this.resetCookieArray = function() {
+  	$cookieStore.put('quotesArray', dummyQuotes);
+  };
 
   this.getData = function() {
+  	var quotes = $cookieStore.get('quotesArray');
   	return quotes;
   };
 
@@ -27,15 +38,18 @@ app.service('dataService', function() {
   	}
 
   	if(dataOkay) {
-  		quotes.unshift(inputData);
-  		console.log(quotes);
+  		var tempCookieArray = $cookieStore.get('quotesArray');
+  		tempCookieArray.unshift(inputData);
+  		$cookieStore.put('quotesArray', tempCookieArray);
   	} else {
   		console.log('There is an error with the input data.')
   	}
   };
 
   this.removeData = function(index) {
-  	quotes.splice(index, 1);
+  	var tempCookieArray = $cookieStore.get('quotesArray');
+  	tempCookieArray.splice(index, 1);
+  	$cookieStore.put('quotesArray', tempCookieArray)
   };
 
 });
