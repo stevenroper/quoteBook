@@ -11,11 +11,11 @@ app.service('dataService', function($cookies, $cookieStore) {
     { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
   ];
   
-  var storeArrayInCookies = function() {
-  		if($cookieStore.get('quotesArray').length < 1) {
-  			$cookieStore.put('quotesArray', dummyQuotes);
-  		}
-  }();
+  // var storeArrayInCookies = function() {
+  // 		if($cookieStore.get('quotesArray').length < 1) {
+  // 			$cookieStore.put('quotesArray', dummyQuotes);
+  // 		}
+  // }();
 
   this.resetCookieArray = function() {
   	$cookieStore.put('quotesArray', dummyQuotes);
