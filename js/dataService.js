@@ -10,12 +10,6 @@ app.service('dataService', function($cookies, $cookieStore) {
     { text: 'Life is what happens to you while you\'re busy making other plans.', author: 'John Lennon'},
     { text: 'What even is a jQuery?', author: 'Tyler S. McGinnis'}
   ];
-  
-  // var storeArrayInCookies = function() {
-  // 		if($cookieStore.get('quotesArray').length < 1) {
-  // 			$cookieStore.put('quotesArray', dummyQuotes);
-  // 		}
-  // }();
 
   this.resetCookieArray = function() {
   	$cookieStore.put('quotesArray', dummyQuotes);
