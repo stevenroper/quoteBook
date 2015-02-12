@@ -35,11 +35,6 @@ app.service('dataService', function() {
   };
 
   this.removeData = function(index) {
-  	// for (var i = 0; i < quotes.length; i++) {
-  	// 	if (inputQuote === quotes[i].text) {
-  	// 		quotes.splice(i, 1);
-  	// 	}
-  	// }
   	quotes.splice(index, 1);
   };
 
