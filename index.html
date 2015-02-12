@@ -31,13 +31,13 @@
 					<div class='panel panel-default' ng-show='toggleAddFields'>
 							<div class='panel-body'>
 								<div class='row'>
-									<div class='col-md-6 col-sm-12 col-xs-12'>
+									<div class='col-md-6 col-sm-12 col-xs-12' style="z-index:3">
 										<input class='col-md-12 col-sm-12 col-xs-12' placeholder='New Quote' ng-model='newQuote.text'>
 									</div>
-									<div class='col-md-3 col-sm-12 col-xs-12'>
+									<div class='col-md-3 col-sm-12 col-xs-12' style="z-index:3">
 										<input class='col-md-12 col-sm-12 col-xs-12' placeholder="Author's Name" ng-model='newQuote.author'>
 									</div>
-									<div class='col-md-3'>
+									<div class='col-md-3' style="z-index:2">
 										<button class='btn btn-success btn-block' ng-click='addQuote()'>Submit New Quote</button>	
 									</div>
 								</div>
@@ -47,10 +47,10 @@
 					<div class='panel panel-default' ng-show='toggleFilter'>
 						<div class='panel-body'>
 							<div class='row'>
-								<div class='col-md-10'>
-									<input class='col-md-12' placeholder='Search any quote...' ng-model='searchTerm'>
+								<div class='col-md-10 col-sm-12 col-xs-12' style="z-index:3">
+									<input class='col-md-12 col-sm-12 col-xs-12' placeholder='Search any quote...' ng-model='searchTerm'>
 								</div>
-								<div class='col-md-2'>
+								<div class='col-md-2' style="z-index:2">
 									<button class='btn btn-danger btn-block' ng-click='searchTerm = null'>Clear Filter</button>
 								</div>
 							</div>

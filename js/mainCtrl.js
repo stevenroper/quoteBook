@@ -16,17 +16,4 @@ app.controller('MainCtrl', function($scope, dataService) {
 		dataService.removeData(index);
 	};
 
-	$scope.filterQuote = function() {
-
-	};
-
-	// $scope.toggleShow = function() {
-	// 	if($scope.showAddQuoteFields) {
-	// 		$scope.showAddQuoteFields = false;
-	// 	} else {
-	// 		$scope.showAddQuoteFields = true;
-	// 	}
-	// }
-
-
 });
